@@ -1141,7 +1141,7 @@ app.get('/myprojects', async function(req, res) {
         console.log(result);
 
         // Render the HTML page with the posts data
-        res.render("MiniProjects/miniprojects", { name: name, mail: mail, imageName: imageName, posts: posts, email: mail, addIdToMyPostButton: true, addIdToAllPostButton: false});
+        res.render("MiniProjects/miniprojects", { name: name, mail: mail, imageName: imageName, posts: posts, email: mail, addIdToMyPostButton: true, addIdToAllPostButton: false, user:userName});
     } catch (error) {
         console.error("Error retrieving data from MongoDB:", error);
         res.status(500).send("Internal Server Error");
