@@ -1351,7 +1351,7 @@ app.get("/project/:projectID", async function(req, res) {
             
 
 
-                res.render("MiniProjects/projectPage", {post, imageName:imageName, name:name, mail:mail});
+                res.render("MiniProjects/projectPage", {post, imageName:imageName, name:name, mail:mail, user:userName});
                 
                 app.get('/download', async function(req, res) {
                     // Replace 'your-bucket-name' and 'file-path-in-bucket' with the actual values
@@ -1386,12 +1386,15 @@ app.get("/project/:projectID", async function(req, res) {
     run().catch(console.dir);
 });
 
-
 app.get("/profile/:user", function(req,res){
     let user = req.params.user;
-    const { name, mail, imageName, userName, sessionUserId } = req.session.user;
-
-    const { MongoClient, ObjectId } = require("mongodb");
+    // Check if req.session.user exists before trying to destructure its properties
+    if (req.session.user) {
+        const { name, mail, imageName, userName, sessionUserId } = req.session.user;
+        console.log(userName);
+    }
+    
+    const { MongoClient } = require("mongodb");
 
     // Replace the following with your Atlas connection string
     const url = process.env.MONGO_URI;
@@ -1399,8 +1402,6 @@ app.get("/profile/:user", function(req,res){
 
     // Reference the database to use
     const dbName = "Freeversity";
-
-    const projectID = req.params.projectID;
 
     async function run() {
         try {
@@ -1415,9 +1416,10 @@ app.get("/profile/:user", function(req,res){
             const userInDb = await col.findOne({ Username:user });
 
             if(userInDb){
-                if(userInDb.Username==userName){
+                if(req.session.user && userInDb.Username == req.session.user.userName){
                     res.send("<body style='background-color:green;'><h1 style='color:white'>In DB Can EDIT</h1></body>");
-                }else{
+                }
+                else{
                     res.send("<body style='background-color:red;'><h1 style='color:white'>In DB but not editable</h1></body>");
                 }
             }else{
@@ -1434,9 +1436,8 @@ app.get("/profile/:user", function(req,res){
     }
 
     run().catch(console.dir);
-    
-
 });
+
 
 
 // Running app on server 3000
