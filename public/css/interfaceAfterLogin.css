@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.testimonial-section{
+    min-height: 100%;
+    width: 100%;
+    background-color: rgb(243, 243, 243);
+    display: flex;
+    align-items: center;
+    padding: 5% 5%;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.cardServices{
+    height: 30vw;
+    width: 23%;
+    background-color: #21325E;
+    border-radius: 2% 20% 2% 2%;
+    position: relative;
+    padding: 0 30px;
+    text-align: justify;
+    transition: all 0.3s ease;
+}
+
+.cardServices:hover{
+    transform: scale(1.02);
+}
+
+.cardServices:nth-child(2){
+    /* background-color: #eb4335; */
+}
+.cardServices:nth-child(3){
+    /* background-color: #34a853; */
+}
+
+.cardServices:nth-child(4){
+    /* background-color: #fabc05; */
+}
+
+.cardServices h1{
+    font-family: "Ubuntu",sans-serif;
+    font-size: 2.2vw;
+    text-align: center;
+    color:white;
+    font-weight: 400;
+}
+.cardServices p{
+    font-family: "Ubuntu",sans-serif;
+    font-size: 1.25vw;
+    text-align: justify;
+    color:white;
+    font-weight: 300;
+}
+
+
+.try-now{
+    height: 3vw;
+    width: 13vw;
+    font-size: 18px;
+    background-color: transparent;
+    border:2px solid white;
+    color: white;
+    position: absolute;
+    bottom: -50px;
+    left:2vw;
+    transition: all 0.3s;
+    /* display: none; */
+    cursor: pointer;
+}
+
+.cardServices:hover .try-now{
+    display: block;
+}
+
+.try-now:hover{
+    background-color: white;
+    opacity: 40%;
+    color: black;
+    
+}
+
+@media screen and (max-width: 1100px) {
+    .cardServices{
+        height: 35vw;
+        width: 26%;
+        margin-bottom: 30px;
+    }
+
+    .cardServices h1{
+        font-size: 2.5vw;
+    }
+
+    .cardServices p{
+        font-size: 1.6vw;
+    }
+
+    .testimonial-section{
+        height: auto;
+        padding-top: 100px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .cardServices{
+        height: 330px;
+        width: 240px;
+        margin-bottom: 30px;
+    }
+
+    .cardServices h1{
+        font-size: 25px;
+    }
+
+    .cardServices p{
+        font-size: 15.5px;
+    }
+
+    .testimonial-section{
+        height: auto;
+        padding-top: 100px;
+    }
+    .try-now{
+        height: 36px;
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .testimonial-section{
+        justify-content: space-around;
+        padding: 100px 20px 20px;
+    }
+    .cardServices{
+        margin-bottom: 20px;
+    }
+}

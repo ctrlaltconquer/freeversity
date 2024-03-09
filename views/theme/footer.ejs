@@ -1,0 +1,50 @@
+<div class="footer" style="background-color: #333; color: white; height: 25%; width: 100%; border-radius: 0;">
+    <h1>Designed & Developed By: </h1>
+    <h2>Ctrl + Alt + Conquer</h2>
+
+   <div class="icon" style="background-color: #333; width: 100%; display: flex;justify-content: center;">
+    <div class="icon col-a">
+    <span class="fa-solid fa-envelope"> </span> 
+    <span class="fa-solid fa-phone"></span>
+    </div>
+
+    <div class="icon col-b">
+    <i class="fa-brands fa-x-twitter"></i>
+    <i class="fa-brands fa-linkedin-in"></i>
+    <i class="fa-brands fa-instagram"></i>
+    </div>
+   </div>
+
+   <div class="copyright" style="color: white; background-color: #333;margin-top: 0; padding-bottom: 40px;">
+        <span> &copy; 2024 CtrlAltConquer  &nbsp; &nbsp; Terms &nbsp; &nbsp; Privacy  </span>
+        <span>Inspiration &nbsp; &nbsp; About &nbsp; &nbsp; Support &nbsp; &nbsp; Resources </span>
+   </div>
+
+</div>
+
+<script src="/js/index.js"></script>
+<script src="/js/interface.js"></script>
+<script>
+    let dropdown = document.getElementById("profile");
+let cross = document.getElementById("cross");
+dropdown.addEventListener("click", function(){
+document.getElementById("profile-box").style.display="block";
+})
+
+cross.addEventListener("click", function(){
+document.getElementById("profile-box").style.display="none";
+})
+
+
+function FullView(ImgLink){
+// alert(ImgLink);
+// document.getElementById("FullImage").src = ImgLink;
+document.getElementById("FullImageView").style.display="flex";
+}
+
+function Close(){
+document.getElementById("FullImageView").style.display="none";
+}
+</script>
+</body>
+</html>

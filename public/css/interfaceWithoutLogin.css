@@ -1,0 +1,195 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+#learnersFeed{
+    height: 45%;
+    width: 100%;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content:start;
+    flex-wrap: wrap;
+}
+
+.learnersFeedCard{
+    font-family: 'Roboto', sans-serif;
+    width: 25%;
+    height: 100%;
+    border: 1px solid #ccc;
+    position: relative;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+#careerChoices{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+}
+
+.careerLeft, .careerRight{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.whenPhone{
+    display: none;
+}
+
+.careerLeft{
+    background-color: whitesmoke;
+}
+.careerRight{
+    background-color: #697CAF;
+}
+
+.careerRight h1{
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 100px;
+}
+
+/* .getStarted{
+    height: 50px;
+    width: 200px;
+    border-radius: 500px;
+    background-color: #20335E;
+    color: white;
+    border: 2px solid #20335E;
+} */
+
+
+.getStarted {
+    border-color: #20335e;
+    background-color: #20335e;
+    border-radius: 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    border-radius: 800px;
+    z-index: 1;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+  }
+  .getStarted:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background: #ffffff;
+    color: #20335e;
+    z-index: -1;
+    transition: all 300ms ease-in-out;
+  }
+  .getStarted:hover {
+    color: #20335e;
+    transform: scale(1.02);
+  }
+  .getStarted:hover:after {
+    width: 110%;
+  }
+  
+
+  .getStartedM {
+    border-color: #20335e;
+    background-color: white;
+    border-radius: 0;
+    color: #20335e;
+    position: relative;
+    overflow: hidden;
+    border-radius: 800px;
+    z-index: 1;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+  }
+  .getStartedM:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background: #20335e;
+    color: #fff;
+    z-index: -1;
+    transition: all 300ms ease-in-out;
+  }
+  .getStartedM:hover {
+    color: #fff;
+    transform: scale(1.02);
+  }
+  .getStartedM:hover:after {
+    width: 110%;
+  }
+
+  #supporters{
+    background-color: whitesmoke;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 25%;
+    padding: 30px 50px;
+  }
+
+@media screen and (max-width: 800px) {
+    #learnersFeed{
+        height: 70%;
+    }
+    .learnersFeedCard{
+        width: 50%;
+        height: 50%;
+    }
+    #careerChoices{
+        flex-direction: column;
+    }
+    .careerLeft, .careerRight{
+        height: 50%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #learnersFeed{
+        height: 150%;
+    }
+    .learnersFeedCard{
+        width: 100%;
+        height: 25%;
+    }
+    #careerChoices{
+        flex-direction: column;
+        height: 50%;
+    }
+    .careerLeft{
+        height: 110%;
+        width: 100%;
+        flex-direction: column;
+        background-color: #697CAF;
+        color: white;
+    }
+    .careerRight{
+        display: none;
+    }
+    .whenPhone{
+        display: block;
+        font-size: 50px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .whenLaptop{
+        display: none;
+    }
+}

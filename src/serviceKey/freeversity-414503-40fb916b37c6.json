@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "freeversity-414503",
+  "private_key_id": "0bfd5ff15fe037e5608cae7558e8eae9190d0548",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDAS/7brcahHace\nOyrqOzu2POvvxday+QEiR/92wgaiMR6wzctKOUMJ9FtHbojIc3wqxtLwCiQ8TBsi\ng3qvNrmE8owCilJjz2nAAEGRWjXxPMB37Yp/JfxLOVi68J8Vp5DbTWIBormINyIB\n1H8B3DfHAnPKbo29FBe00ie5YsnGzATAXUleO8C4O1lWJ9wNxBn+r1gxUMiDvbCh\nmz1nYsHnLe++KKGDdh9zNIHELgEDDD2fnbbrlnYyPT79pyLFWT48GOP7o3xhmQ2X\nnrkZQv+lENu2M3u/OAv6INqmLc18Hv3PxYESE1nSnpuCCyarxfXm8/X+mEuQTEJU\nLgUiNLsZAgMBAAECggEAN1uJTk9r/4TMT9kjpRORQIiwOTHgeVxSlb5ZTiRUCYwP\ndEGCNOdgI7T7NAifiukoBR6AqgaZYNxd8WUdQ+SCqsGySabtSftzS4knVwM7xStC\nkyPIe4sBYtxq7UII4hB/lIpl3Oet9oc8nH9CYtQ1IG7Vy6Bg4F4w5uaa9fT49mfU\nWXq6f3GByJjIiUqhfTpWEi/VKAYIXV9b2ZIlwywkmtmXJqWfPCPlMIGzRtVdi2Tz\n5cTwySixlOZfKuenw9NgowoH8YOnXKsl3LIq7K1XOVm1Vf1vl+xJCLBah5GzWPvl\nrOM0a5zgwFUk+b86ijj0mNCQU5OwlOIs/+zylu5KOwKBgQDnOYeVlbNQb0MPD0v+\nkGIU22OdwgPi9FyiO1e6YQ3fh6pmcSlx8xfk4zyrNzqk0z+i3pMsR/kgmioWPKmR\nOnTyUqAJLlwqWuC/9tm2VStXYWuQEdXmL+rfqFWtuNTKHJ56UCCyY49O07GEL/P2\n3ZJyy65IPaASecaB/l4xWfkvkwKBgQDU5q2ze4Pem0kUDBNYWjicMdmS/dclcALk\nF5qng6gID6hO8ac56CF5y5y9FMEYZi1ZAlZnvP0rSpUws5mrysXXY55ATCy/RdtB\nsjgMH7orBQFU5nTjTHLSKtFyvaZDRF/L7RtSYpfSV58ZVJIorrGqcj2cKpqwh0Ac\nINbNMjAeIwKBgQCiQLhnuxiNBMYltzI4e9CXmiuY9CAODjNClCnHW3uEs4pbQGU4\n1MCbmOllq+e26ZXqEA1uMUMcIZIO8Jp8kmyl7lzmlGWQQx0bF3lGfRVgx7fW7O0Q\nDefe8hzNPrny6Yo7giavhzV0txAGFjA3ttuhOlQd1UCSNmmZpokqUFyPiQKBgDE2\nZV6ApZnWUU0mAW7B5CYOy9lTfeD0hGaPIjuojjXW0LP23g3fn6VUsJVwb7YhIEhb\n5vcx01+nbNcGHPZ9979zEoiQUyOflTAZbyU2TEVXcdhbMRe9eykjpqicOAuCiZZM\n56zih2+iu28SgnqO7xiUMbOgkYNOsD4QRTbHbCH7AoGBAMAxUkS/RlSad+ij6NMb\nrrCbJRWVf6/BvycCurBa1Cli3QKDZtVM3QYCyqV/outx+n0gmyRsywaUCQOYkRvX\navpPZjDh0wi26mEIutBVlqDTIR61di9FORUkT8xXIqFOSlQmIMbVEGdMZFirXckD\njSb1N/6F0L//N+C3MrvsLF9S\n-----END PRIVATE KEY-----\n",
+  "client_email": "freeversitys-storage@freeversity-414503.iam.gserviceaccount.com",
+  "client_id": "107006269880782961686",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/freeversitys-storage%40freeversity-414503.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

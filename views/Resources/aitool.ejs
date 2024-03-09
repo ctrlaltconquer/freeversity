@@ -1,0 +1,124 @@
+<head>
+  <link rel="stylesheet" href="/css/resource.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0" />
+  
+</head>
+<%- include('../theme/headeresources'); -%>
+
+    <center><strong style="font-size: 30px;"><br>All AI tools at one place</strong></center>
+    <div class="search-box">
+      <input type="text" id="myInput" placeholder="Search" onkeyup="myFunction()">
+    </div>
+<center>
+    <div class="dropdown">
+      <button class="dropbtn"><span>Category</span></button>
+      <div class="dropdown-content">
+        <a href="#">Code</a>
+        <a href="#">3D</a>
+        <a href="#">Image</a>
+        <a href="#">Audio</a>
+        <a href="#">Video</a>
+        <a href="#">Text</a>
+        <a href="#">Others</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn"><span>Z-A</span></button>
+    </div>
+</center>
+    <div id="FullImageView">
+        <img id="FullImage">
+        <div class="upload">
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input class="customfile" type="file" name="file" required/><br>
+                <button type="submit" class="button">Update</button>
+                <div id="close" onclick="Close()"><span class="material-symbols-outlined">
+                    close
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
+    <div id="profile-box">
+        <div id="cross"><span class="material-symbols-outlined">
+            close
+            </span>
+        </div>
+        <center>
+        <div class="profile-pic" style="height: 70px;width: 70px;border: 1px solid #33A650;background-image: url(images/profileBackground.png);background-position:center;background-repeat: no-repeat;background-size: cover;border-radius: 100%;">
+            <img src="uploads/<%= imageName %>" onclick="FullView(this.src)" height="100%" width="100%" style="border-radius: 100%; cursor: pointer;">
+        </div>
+        </center>
+    
+        
+    
+        <h4>Hi <%= name %></h4>
+        <h5><%= mail %></h5>
+        <br>
+        <a href="/logout">Log Out</a>
+    
+    </div>
+    <div class="main" id="myUL">
+      <div id="myNav" class="overlay">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      
+        <!-- Overlay content -->
+        <div class="overlay-content">
+          <form action="/aitool " method="post" enctype="multipart/form-data">
+            <input type="text" name="titleofpost" id="titleofpost" placeholder="Title of the post" required><br>
+            <input type="text" name="descriptionofpost" id="titleofpost" placeholder="description of the post" required><br>
+            <input type="file" name="fileofpost"><br>
+            <input type="color" name="backgroundofpost" placeholder="Choose Color">
+            <button type="submit">Publish</button>
+        </form>  
+        </div>
+      
+      </div>
+      
+      <!-- Use any element to open/show the overlay navigation menu -->
+   
+
+      
+      <%    posts.forEach(function(post){ %>
+            <nehal onclick="window.location.href='<%= post.ToolLink %>'" class="post-box" style="background-image: url(aiTool/<%= post.MajorCategory +'.png' %>); cursor: pointer;">
+              <a href="<%= post.ToolLink %>" target="_blank">
+              <h2><%= post.AIToolName %></h2>
+              <!-- <strong><%= post.PostedBy %></strong> -->
+              <strong>Category: </strong> <%= post.MajorCategory %> <br>
+              <strong>Price: </strong> <%= post.Price %>
+              <!-- <h1><%= post.Title %></h1> -->
+              <p><%= post.Description.substring(0,100) + " ..." %></p>
+              </a>
+            </nehal>
+      <% }); %>
+      
+    </div>
+    <div class="post-form-box"></div>
+    <script src="js/aitool.js"></script>
+    <script>
+      function myFunction() {
+        // Declare variables
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById('myInput');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName('nehal');
+      
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
+      </script>
+      <%- include('../theme/footer'); -%>

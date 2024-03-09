@@ -1,0 +1,247 @@
+<%- include("../theme/header") -%>
+<head>
+    <style>
+        .posting-project-area{
+            height: 90%;
+            width: 100%;
+            /* background-color: rgb(255, 248, 248); */
+            padding: 2% 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        #sample-image{
+            height: 100%;
+            width: 45%;
+            background-repeat: no-repeat;
+            background-position:top;
+            background-size: cover;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.155);
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .sample-image-step{
+            height: 150px;
+            width: 150px;
+            background-repeat: no-repeat;
+            background-position:top;
+            background-size: cover;
+            box-shadow: 1px 1px 10px rgba(175, 175, 175, 0.155);
+            position: relative;
+            border-radius: 10px;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+        }
+
+/* Hide the default file input */
+input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  /* width: 20px;
+  height: 20px; */
+  cursor: pointer; /* Show cursor as pointer when hovering over button */
+}
+
+.posting-project-area-info{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Style the custom button */
+#custom-upload-button {
+  height: 100%;
+  width: 100%;
+  /* background-color: #21335F; */
+  color:#ccc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50%);
+}
+
+#custom-step-button {
+  height: 100%;
+  width: 100%;
+  /* background-color: #21335F; */
+  color:#ccc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50%);
+}
+
+#image-info{
+    height:20vw;
+    width: 100%;
+    /* background-color: #21335F; */
+    display: flex;
+    justify-content: space-between;
+}
+
+#project-steps{
+    height:auto;
+    width: 100%;
+    /* background-color: #ccc; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+}
+
+.post-project-input{
+    outline: none;
+    height: 15%;
+    width: 47%;
+    padding-left: 10px;
+}
+
+.post-project-input-fullwidth{
+    outline: none;
+    height: 15%;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.post-project-input-steps{
+    outline: none;
+    height: 35px;
+    width: 47%;
+    padding-left: 10px;
+}
+
+.add-steps{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 5px;
+    cursor: pointer;
+    color: #21335F;
+    border-radius: 100px;
+    border: 2px solid #21335F;
+}
+
+.steps{
+    height: auto;
+    padding: 2%;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    animation: stepanimation 1s ease forwards;
+}
+
+@keyframes stepanimation {
+    from{
+        margin-left: 1000px;
+    }
+    to{
+        margin-left: 0;
+    }
+}
+
+.myTextarea{
+    padding: 10px;
+}
+
+.step-image{
+    height: 150px;
+    width: 150px;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.required::after {
+  content: "AKFAFHIHALFHLIHFLIHIAHFLIHLDFHLAHSLHFLHLI";
+  color: red;
+  margin-left: 5px;
+}
+
+.btn-sub{
+    height: 40px;width: 170px; background-color: #21335F; cursor: pointer; color: white; margin-left: 0px auto; border: none;
+}
+
+.btn-sub:hover{
+    background-color: #697CAF;
+    transition: 0.3s;
+}
+
+    </style>
+</head>
+<body>
+    <form id="upload-form" action="/miniprojects" method="post" enctype="multipart/form-data">
+        <div class="posting-project-area">
+            <section id="image-info">
+                <div id="sample-image">
+                    <!-- Wrap the file input inside the label -->
+                        <input type="file" id="image-upload" name="imageofproject" accept="image/*" required>
+                        <a id="custom-upload-button">Choose Image</a>
+                </div>
+                <div class="posting-project-area-info">
+                    <input class="post-project-input required" type="text" name="projectname" placeholder="Project Name" required>
+                    <input class="post-project-input required" type="text" name="projectdescription" placeholder="Something about the Project" required>
+                    <input class="post-project-input-fullwidth" type="text" name="githubrepolink" placeholder="Github Repository Link">
+                    <input class="post-project-input-fullwidth" type="text" name="deploylink" placeholder="Deploy Link">
+                    <input class="post-project-input-fullwidth required" type="text" name="technology" placeholder="Technology used? (html, java, react, etc...)" required>
+                </div>
+            </section>
+<br>
+            <section id="project-steps">
+                <strong>Tell us How you build</strong>    
+                          
+            </section>
+            <a class="add-steps">
+                <span class="material-symbols-outlined">
+                    add
+                </span>
+                <strong>Step</strong></a>
+            
+        </div>
+        <div style="justify-content: center;display: flex;">
+            <button class="btn-sub" type="submit">Post</button>
+        </div>
+        
+    </form>
+
+    <script src="/js/projectposting.js"></script>
+</body>
+<%- include("../theme/footer") -%>
+
+
+
+<!-- <div class="steps">
+    <h3>Step 1</h3>
+    <textarea class="myTextarea" placeholder="Code or text" name="step1" cols="50"></textarea>
+
+    <div class="sample-image-step">
+        <input type="file" class="image-upload-step" name="imageofstep1" accept="image/*">
+        <a class="custom-step-button">Choose Image</a>
+    </div>
+</div>   -->

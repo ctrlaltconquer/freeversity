@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+
+        .containerInsha {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 100px 0px;
+            padding: 100px 50px;
+            width:100%;
+        }
+
+        .containerInsha .cardInsha {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 100%;
+            height:120px;
+            background: whitesmoke;
+            border-radius: 20px;
+            transition: 0.5s;
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .containerInsha .cardInsha:hover {
+            height: 700px;
+        }
+
+        .containerInsha .cardInsha .img-boxInsha {
+            position: absolute;
+            top: 10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 122.97px;
+            height: 90px;
+            background: #333;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.5s;
+            z-index: 20;
+        }
+
+        .containerInsha .cardInsha:hover .img-boxInsha {
+            width: 500px;
+            height: 366.66px;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            transition: 0.5s;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+        }
+
+        .containerInsha .cardInsha .img-boxInsha img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .containerInsha .cardInsha .contentInsha {
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            width: 100%;
+            height: 30px;
+            padding: 0 30px;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .containerInsha .cardInsha:hover .contentInsha {
+            top: 110px;
+            height: 450px;
+        }
+
+        .cardInsha .step-inside{
+            opacity: 0;
+            transform: 10s;
+        }
+        .cardInsha:hover .step-inside{
+            opacity: 1;
+        }
+
+        .containerInsha .cardInsha .contentInsha h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--clr);
+        }
+
+        .containerInsha .cardInsha .contentInsha .codeAreaInsha {
+            color: #333;
+            text-align: left;
+        }
+
+        .containerInsha .cardInsha .contentInsha a {
+            position: relative;
+            top: 15px;
+            display: inline-block;
+            padding: 12px 25px;
+            text-decoration: none;
+            background: var(--clr);
+            color: #FFF;
+            font-weight: 500;
+        }
+
+        .containerInsha .cardInsha .contentInsha a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 480px) {
+            .containerInsha .cardInsha {
+                width: 230px;
+                border-radius: 15px;
+            }
+
+            .containerInsha .cardInsha .img-boxInsha {
+                width: 185px;
+                border-radius: 10px;
+            }
+
+            .containerInsha .cardInsha .contentInsha .codeAreaInsha {
+                font-size: 0.8rem;
+            }
+
+            .containerInsha .cardInsha .contentInsha a {
+                font-size: 0.9rem;
+            }
+        }
+
+        .codeAreaInsha {
+            background-color: transparent;
+            height: 800px;
+            width: 45%;
+            transition: all 0.5s;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 10px;
+        }
+
+        .containerInsha .cardInsha:hover .codeAreaInsha {
+            overflow-y: scroll;
+            background-color: #222;
+            color:white;
+        }
+
+        .abc {
+            height: 100%;
+            width: 100%;
+            background-color: #333;
+        }
+
+        .information{
+            height: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            position: relative;
+            padding: 0 100px;
+        }
+        .information h1{
+            font-size: 50px;
+        }
+        .information a{
+            text-decoration: none;
+            background-color: #20325F;
+            padding: 5px 15px;
+            color: white;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .information a:hover{
+            background-color: #697CAF;
+        }
+
+        .Description{
+            padding: 0 300px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<%- include('../theme/header') -%>
+<body>
+
+    
+
+<div class="information">
+    <h4 style="position: absolute;top: 0px;right: 50px;"><%= post.PostedByName %></h4>
+    <h1><%= post.Title %></h1><br><br>
+    <img src="<%= post.sampleimage %>" width="50%" alt="project image" style="border-radius: 20px; box-shadow: 1px 1px 10px #697CAF;">
+    <h2>Made with:- <%= post.technology %></h2><br>
+    <a href="<%= post.DeployLink %>" target="_blank">Visit</a><br>
+    <a href="<%= post.GithubRepoLink %>" target="_blank">Github Repo</a><br><br>
+    <div class="Description"><%= post.Description %> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, eaque iste molestiae ab aperiam obcaecati ducimus molestias suscipit distinctio adipisci cumque quia reprehenderit eligendi. Eveniet perferendis cumque vel fugit sunt!</div>
+</div>
+
+    <div class="containerInsha" style="margin-top: 200px;">
+    <% Object.keys(post.steps).forEach(stepKey => { %>
+        <div class="cardInsha" style="--clr: #009688">
+            <div class="img-boxInsha">
+                <img src="<%= post.steps[stepKey].image %>">
+            </div>
+            <h2 style="font-weight: 400; color: #20325F; position: absolute; top: 0; left: 0;"><%= stepKey %></h2>
+
+            <div class="contentInsha">
+                <div class="codeAreaInsha">
+                    <p class="step-inside" style="font-size: 14px; font-weight: 600;">
+                        <% var textWithNewLines = post.steps[stepKey].text %>
+                        <% var textWithBreakTags = textWithNewLines.replace(/\n/g, "<br>"); %>
+                        <% var colorVarText = textWithBreakTags.replace(/\bvar\b(?=\s|$)/g, "<span style='color: red;'>var</span>"); %>
+                        <% colorVarText = colorVarText.replace(/function/g, "<span style='color: orange;'>function</span>"); %>
+                        <% colorVarText = colorVarText.replace(/(\.\w+)/g, "<span style='color: yellow;'>$1</span>"); %>
+                        <% colorVarText = colorVarText.replace(/(\#\w+)/g, "<span style='color: lightgreen;'>$1</span>"); %>
+                        <% colorVarText = colorVarText.replace(/"([^"]*)"/g, function(match, p1) {
+                            return '<span style="color: green;">"' + p1 + '"</span>';
+                        }); %>
+                        <% colorVarText = colorVarText.replace(/\bconst\b(?=\s|$)/g, "<span style='color: red;'>const</span>"); %>
+                        <%- colorVarText %>
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    
+    <% }); %>   
+    </div>
+    
+
+    <%- include('../theme/footer') -%>
+</body>
+</html>

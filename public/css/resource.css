@@ -1,0 +1,274 @@
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.main{
+    height: auto;
+    width: 100%;
+    /* background-color: whitesmoke; */
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 20px;
+    flex-wrap: wrap;
+    /* margin-top: 100px; */
+}
+
+
+.post-btn{
+    height: 35px;
+    width: 35px;
+    transition: transform 0.3s ease-in-out;
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    bottom: 20px;
+    border: 3px solid rgb(35, 159, 175);
+    transition: 0.3s;
+    color: rgb(35, 159, 175);
+    position: fixed;
+}
+
+.post-btn:hover{
+    background-color: rgb(35, 159, 175);
+    color: white;
+}
+
+.post-box{
+    height: 200px;
+    width: 300px;
+    background-color: white;
+    margin: 0 10px 20px;
+    border: 1px solid rgb(194, 194, 194);
+    overflow-wrap: break-word;
+    border-radius: 8px;
+    transition: 0.2s;
+    padding: 0 10px;
+    position: relative;
+}
+
+
+
+.btn-open{
+  transition: all .2s ease-in-out;
+  position: absolute;
+  bottom: 10px; 
+  right: 10px; 
+  background-color: rgb(35, 159, 175); 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  padding: 2px 5px; 
+  display: flex; 
+  color: white;
+  justify-content: center; 
+  align-items: center;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.342);
+}
+
+.btn-open span{
+  padding: 5px 10px;
+}
+
+.post-box:hover{
+  transform: scale(1.05);
+  border-radius: 1px;
+}
+
+
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(255, 255, 255); /* Black fallback color */
+    background-color: rgba(255, 255, 255, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    background-color: #ffffff;
+    width: 50%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+
+  .overlay-content input{
+    height: 40px;
+    width: 300px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #045faa;
+    border-radius: 30px;
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 40px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+
+  a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+
+  .search-box{
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+    /* animation: blurring 2s forwards; */
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    /* background-color: rgb(35, 159, 175); */
+  }
+
+  .search-box input{
+    height: 45px;
+    width: 32%;
+    border: 2px solid rgb(185, 185, 185);
+    border-radius: 520px;
+    padding-left: 20px;
+    font-size: 18px;
+  }
+
+
+  .search-box button{
+    height: 45px;
+    width: 45px;
+    border: 2px solid rgb(185, 185, 185);
+    border-radius: 0 240px 240px 0;
+    border-left: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  @keyframes blurring {
+    from{
+        filter: blur(5px);
+    }
+
+    to{
+        filter: blur(0px);
+    }
+  }
+
+
+
+
+  .dropbtn {
+    background-color: #045faa;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 16px;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #3e518e;}
+
+
+.like-btn{
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.post-box:hover .like-btn{
+  opacity: 1;
+}
+
+.blur{
+  width: 100%; height: 0; background-color: #000000a8; position: absolute; top: 0; left: 0; border-radius: 1px;
+  opacity: 0;
+  transition: 0.3s;
+}
+.post-box:hover .blur{
+  opacity: 1;
+  height: 100%;
+}

@@ -1,0 +1,607 @@
+html,body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    height: 100%;
+    width:100%;
+    overflow-x: hidden;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.nav{
+    height:10%;
+    width:100%;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    position: relative;
+    background-color: white;
+}
+
+.brand{
+    height:100%;
+    width:15vw;
+    font-family: "Lobster Two", sans-serif;
+    color:#21325E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.brand a {
+    text-decoration: none;
+    color:#21325E;
+}
+
+.items a{
+    font-size: 15px;
+    font-weight:500;
+    text-decoration: none;
+    color: black;
+    font-family:"Ubuntu",sans-serif;
+    padding-right: 20px;
+    transition: 0.3s;
+}
+
+.items a:hover{
+    color: rgb(175, 172, 172);
+}
+
+.items{
+    height: 100%;
+    width:48vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.search{
+    height: 100%;
+    width: 28vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.search-button{
+    background-color: white;
+    height: 70%;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.profile-photo{
+    height: 38px;
+    border: 2px solid #448ff2;
+    width: 38px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.drop-button{
+    /* background-color: #21325E; */
+    height: 100%;
+    width: 10vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+
+.drop-button-icon{
+    background-color: #fafafa;
+}
+
+.drop-button:hover .nav{
+    height: 20%;
+}
+
+
+
+.content{
+    font-family: "Bitter", cursive;
+    color: #21325E;
+    margin-top: 0;
+    /* background-color: pink; */
+    transition: 0.5s;
+    height: 80%;
+    width:100%;
+    animation: content 1s ease-out forwards;
+}
+.content h1{
+    font-size: 80px;
+    font-weight: 400;
+    color: white;
+    animation: color 1s 0.5s ease-out forwards;
+    text-shadow: -1px 0 #21325E, 0 1px #21325E, 1px 0 #21325E, 0 -1px #21325E;
+}
+
+.content h2{
+    font-size: 50px;
+    font-weight: 400;
+    margin-top: -70px;
+    font-family: "Satisfy", cursive;
+    color:gray;
+}
+
+.content h3{
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: -20px;
+    color:rgb(96, 94, 94);
+}
+
+
+.tagline{
+    height:auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+
+
+button{
+    height:50px;
+    width:180px;
+    border-radius: 30px;
+    border: 2px solid gray;
+    font-size: 22px;
+    color:gray;
+    font-family:"Ubuntu",sans-serif;
+
+    margin:70px 20px;
+}
+
+.landing-buttons{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.btn-b{
+    color:white;
+    background-color: #448ff2;
+    border:2px solid #448ff2;
+    cursor:pointer;
+    transition: 0.3s;
+}
+
+.btn-a{
+    background-color: transparent;
+    cursor:pointer;
+    transition: 0.3s;
+}
+
+.btn-a:hover{
+    background-color: rgb(175, 172, 172);
+    border: 2px solid rgb(175, 172, 172);
+    color:white;
+    border:none;
+    
+}
+
+.btn-b:hover{
+    background-color: transparent;
+    color:#448ff2;
+    border: 2px solid #448ff2;
+}
+
+
+
+@keyframes content {
+    from{
+        opacity: 0;
+        transform: scale(80%);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(100%);
+    }
+}
+
+@keyframes color {
+    from{
+        color: white;
+    }
+    to{
+        color: #21325E;
+    }
+}
+
+
+@keyframes searchVisible {
+    from{
+        margin-left: 1000px;
+    }
+    to{
+        margin-left: 0px;
+    }
+}
+
+@keyframes searchInVisible {
+    0%{
+        margin-left: 0px;
+    }
+    99%{
+        margin-left: 1000px;
+    }
+    100%{
+        display: none;
+    }
+}
+
+@keyframes sectionMargin {
+    from{
+        margin-top: 0px;
+    }
+    to{
+        margin-top: 150px;
+    }
+}
+
+@keyframes sectionMarginBack {
+    from{
+        margin-top: 150px;
+    }
+    to{
+        margin-top: 0px;
+    }
+}
+
+
+
+
+
+.testimonial-section{
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10% 10%;
+}
+
+.blocks{
+    height: 40%;
+    width: 20%;
+    background-color: #21325E;
+    float: left;
+    border-radius: 2%;
+}
+
+
+
+.footer{
+    height: 50%;
+    width: 100%;
+    background-color: rgb(202, 202, 202);
+    color:rgb(103, 103, 103);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius: 30% 70% 0 0;
+}
+
+.footer h1{
+    font-weight: 200;
+    font-family:"Satisfy", cursive;
+    color:rgb(255, 255, 255);
+    margin-top: 50px;
+    font-size: 23px;
+}
+
+.footer h2{
+    font-family:"Bitter", cursive;
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+    
+}
+
+.icon{
+    font-size: 25px;
+    display: inline-block;
+    float:left;
+}
+
+.icon col-a{
+    float: left;
+}
+
+.icon col-b{
+    padding-top: 40px;
+    float: right;
+    padding-left: 20px;
+}
+
+
+.icon span{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+}
+
+i{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+}
+
+
+
+/* footer */
+
+
+.copyright{
+    /* margin-top: -100px; */
+    height:20px;
+    width: 100%;
+    font-family: "Ubuntu",sans-serif;
+    /* background-color: red; */
+    margin-top: 30px;
+    font-size: 13px;
+    padding:0% 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.spaces{
+    width: 20%;
+    background-color: red;
+}
+
+
+
+/* UN GOALS SECTION */
+.un-goals{
+    background-color: #21325E;
+    width: 100%;
+    min-height:100%;
+    color: white;
+    font-family: "Bitter",sans-serif;
+    padding: 10% 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.un-goalsm{
+    background-color: #ffffff;
+    width: 100%;
+    min-height:100%;
+    color: #21325E;
+    font-family: "Bitter",sans-serif;
+    padding: 10% 5%;
+}
+
+.un-goals h1{
+    font-size: 5vw;
+    font-weight: 400;
+    text-align: left;
+    /* margin-left: 50px; */
+}
+
+.un-goals h2{
+    font-size: 8vw;
+    font-weight: 400;
+    text-align: left;
+    margin-top: -50px;;
+}
+
+#text-learning{
+    width: 50%;
+}
+
+#gemini{
+    width: 100%;
+    height: 70px;
+}
+
+#geminiDataContainer{
+    width: 50%;
+    font-family: 'Ubuntu';
+    letter-spacing: 2px;
+    height: auto;
+}
+
+#copyButton{
+    position: absolute; top: 50px; right: 50px; cursor: pointer;
+}
+
+
+@media screen and (max-width: 900px) {
+    .brand a {
+        text-decoration: none;
+        color:#21325E;
+        font-size: 13px;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .search{
+        display: none;
+        background-color: #21325E;
+        z-index: 5;
+        width: 100%;
+    }
+
+    .search-button{
+        background-color: #21325E;
+    }
+
+    .visible {
+        display: flex !important;
+    }
+    
+    .brand{
+        width: 17vw;
+    }
+
+    .items{
+        width: 70vw;
+    }
+
+    .items a{
+        padding-left: 20px;
+        padding-right: 0;
+    }
+
+    .drop-button{
+        display: flex;
+    }
+
+
+    .un-goals{
+        background-color: #21325E;
+        width: 100%;
+        min-height:100%;
+        color: white;
+        font-family: "Bitter",sans-serif;
+        padding: 5%;
+    }
+
+    .un-goals h1{ 
+        font-size: 10vw;
+    }
+
+    .un-goals h2{
+        font-size: 8vw;
+    }
+
+    #gemini{
+        width: 100%;
+    }
+
+    #text-learning{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #geminiDataContainer{
+        width: 100%;
+    }
+
+    #copyButton{
+        position: absolute; top: 400px; cursor: pointer; right: 0;
+    }
+
+}
+
+
+@media screen and (max-width: 550px){
+    .search,.items{
+        display: none;
+        background-color: #21325E;
+        z-index: 5;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .search{
+        padding: 0 10px;
+    }
+
+    .items a{
+        color: #fff;
+        padding-left: 0;
+    }
+
+    .visible {
+        display: flex !important;
+    }
+    
+    .nav{
+        justify-content: space-between;
+        padding: 0 0px;
+    }
+    .brand{
+        width: 170px;
+    }
+    .drop-button{
+        width: 70px;
+    }
+
+    .content{
+        text-align: center;
+        height: auto;
+    }
+
+    .content h1{
+        font-size: 15vw;
+    }
+
+    .content h2{
+        font-size: 10vw;
+        margin-top: -10px;
+    }
+
+    .content h3{
+        font-weight: 400;
+        margin-top: 60px;
+    }
+
+    .un-goals{
+        background-color: #21325E;
+        width: 100%;
+        min-height:100%;
+        color: white;
+        font-family: "Bitter",sans-serif;
+        padding: 5%;
+    }
+
+    .un-goals h1{ 
+        font-size: 12vw;
+        padding-bottom: 30px;
+    }
+
+    .un-goals h2{
+        font-size: 10vw;
+    }
+
+    #gemini{
+        width: 100%;
+        height: 50px;
+    }
+
+    #text-learning{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #geminiDataContainer{
+        width: 100%;
+    }
+
+    .footer h2{
+        font-family:"Bitter", cursive;
+        font-size: 35px;
+        font-weight: 400;
+        margin-top: -10px;
+        
+    }
+
+}
+

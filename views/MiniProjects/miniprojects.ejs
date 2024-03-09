@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/resource.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0" />
+    <style>
+      .resourceNav{
+        background-color: transparent;
+        display: flex; justify-content: center; align-items: center;
+      }
+
+      .resourceNav a{
+        display: flex;
+        background-color: #e7e7e7;
+        transition: 0.3s;
+        color: #21325E;
+        position: relative;
+        padding: 0;
+        width: 100px;
+        height: 35px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2px;
+        margin-left: 2%;
+        margin-right: 2%;
+      }
+      .resourceNav a:hover{
+        background-color: #21325E;
+        color: white;
+      }
+      .resourceNav a:hover::after{
+        position: absolute;
+        bottom: -10px;
+        content: "";
+        height: 2px;
+        animation: afteranimate 0.3s ease forwards;
+        background-color: #21325E;
+        color: white;
+      }
+      #resourceactive{
+        background-color: #21325E;
+        color: white;
+      }
+
+      #resourceactive::after{
+        position: absolute;
+        bottom: -10px;
+        content: "";
+        height: 2px;
+        animation: afteranimate 0.3s ease forwards;
+        background-color: #21325E;
+        color: white;
+      }
+
+      .resourceNav a li{
+        list-style: none;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .resourceNav a li:hover{
+        background-color: #21325E;
+        color: white;
+        width: 100%;
+      }
+
+      @keyframes afteranimate {
+        from{
+          width: 0px;
+        }
+        to{
+          width: 100%;
+        }
+      }
+
+      .category-drop{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #e7e7e7;
+        color: #21325E;
+        position: absolute;
+        bottom: -120px;
+        z-index: 20;
+        visibility:hidden;
+        transition: all 0.3s;
+      }
+
+      .resourceNav a:hover .category-drop{
+        visibility: visible;
+      }
+      
+      .post-box:hover{
+        transform: scale(1);
+      }
+
+      .postCover{
+        height: 38%;
+        width: 100%;
+        bottom: 0px; 
+        left: 0; 
+        transform: translate(0%);
+        border: none;
+        transition: all ease 0.5s;
+      }
+      .post-box:hover .postCover{
+        height: 90%;
+        width: 100%;
+        border: none;
+        bottom: 0px; 
+        left: 0%; 
+        border: none;
+        transform: translate(0%);
+        z-index: 0;
+      }
+
+
+
+
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #36454F;
+} */
+
+.containernehal {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+
+.containernehal .cardnehal {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    max-width: 100%;
+    height: 300px;
+    background: #FFF;
+    border-radius: 20px;
+    transition: 0.5s;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+}
+
+.containernehal .cardnehal:hover {
+    height: 400px;
+}
+
+.containernehal .cardnehal .img-boxnehal {
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.containernehal .cardnehal:hover .img-boxnehal {
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.containernehal .cardnehal .img-boxnehal img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.containernehal .cardnehal .contentnehal {
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    height: 35px;
+    padding: 0 30px;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.containernehal .cardnehal:hover .contentnehal {
+    top: 130px;
+    height: 250px;
+}
+
+.containernehal .cardnehal .contentnehal h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--clr);
+}
+
+.containernehal .cardnehal .contentnehal p {
+    color: #333;
+}
+
+.containernehal .cardnehal .contentnehal a {
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    background: var(--clr);
+    color: #FFF;
+    font-weight: 500;
+}
+
+.containernehal .cardnehal .contentnehal a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+    .containernehal .cardnehal {
+        width: 230px;
+        border-radius: 15px;
+    }
+
+    .containernehal .cardnehal .img-boxnehal {
+        width: 185px;
+        border-radius: 10px;
+    }
+
+    .containernehal .cardnehal .contentnehal p {
+        font-size: 0.8rem;
+    }
+
+    .containernehal .cardnehal .contentnehal a {
+        font-size: 0.9rem;
+    }
+}
+
+.post-btn{
+  border-color: #697CAF; color: #697CAF; height: 40px; width: 40px;
+}
+
+.post-btn:hover{
+  background-color:#697CAF; color: #ffffff; height: 40px; width: 40px;
+  transform: scale(1.3);
+}
+      
+    </style>
+</head>
+<%- include('../theme/header'); -%>
+    <center><strong style="font-size: 30px;"><br>Mini Projects</strong></center>
+    <div class="search-box">
+      <input type="text" id="myInput" placeholder="Search" onkeyup="myFunction()">
+    </div>
+    <nav class="resourceNav">
+        <a class="filterButtons" <% if (addIdToAllPostButton) { %> id="resourceactive"<% } %> href="/miniprojects">All Projects</a>
+        <a class="filterButtons" <% if (addIdToMyPostButton) { %> id="resourceactive"<% } %> href="/myprojects" >My Uploads</a>
+        <a class="filterButtons" href="#">Category
+          <div class="category-drop">
+            <li>Code</li>
+            <li>Operating System</li>
+            <li><input type="text" style="height: 100%;" name="category" placeholder="Others"></li>
+          </div>
+        </a>
+    </nav>
+<center>
+    <!-- <div class="dropdown">
+      <button onclick="window.location.href='/resources'" class="dropbtn" style="height: 40px;"><span>All Posts</span></button>
+    </div>
+
+    <div class="dropdown">
+      <button onclick="window.location.href='/mypost'" class="dropbtn" style="height: 40px;"><span>My Posts</span></button>
+    </div>
+
+    <div class="dropdown" >
+      <button class="dropbtn" style="height: 40px;"><span>Category</span></button>
+      <div class="dropdown-content">
+        <a href="#">Code</a>
+        <a href="#">3D</a>
+        <a href="#">Image</a>
+        <a href="#">Audio</a>
+        <a href="#">Video</a>
+        <a href="#">Text</a>
+        <a href="#">Others</a>
+      </div>
+    </div>
+
+    <div class="dropdown" >
+      <button class="dropbtn" style="height: 40px;"><span>Z-A</span></button>
+    </div> -->
+
+
+</center>
+    <div id="FullImageView">
+        <img id="FullImage">
+        <div class="upload">
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input class="customfile" type="file" name="file" required/><br>
+                <button type="submit" class="button">Update</button>
+                <div id="close" onclick="Close()"><span class="material-symbols-outlined">
+                    close
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
+    <div id="profile-box">
+        <div id="cross"><span class="material-symbols-outlined">
+            close
+            </span>
+        </div>
+        <center>
+        <div class="profile-pic" style="height: 70px;width: 70px;border: 1px solid rgb(35, 84, 175);background-image: url(images/profileBackground.png);background-position:center;background-repeat: no-repeat;background-size: cover;border-radius: 100%;">
+            <img src="uploads/<%= imageName %>" onclick="FullView(this.src)" height="100%" width="100%" style="border-radius: 100%; cursor: pointer;">
+        </div>
+        </center>
+    
+        
+    
+        <h4>Hi <%= name %></h4>
+        <h5><%= mail %></h5>
+        <br>
+        <a href="/logout">Log Out</a>
+    </div>
+
+    <div class="main" id="myUL">
+      
+      <!-- Use any element to open/show the overlay navigation menu -->
+      <span class="post-btn" style="z-index: 34; " onclick="window.location.href='/projectposting'">
+        <span class="material-symbols-outlined">
+          add
+        </span>
+      </span>
+
+      
+      <%    posts.forEach(function(post){ %>
+            <!-- <nehal class="post-box" style="background-color: white;">
+                <div style="display: flex; justify-content: space-between;"><strong style="font-size: 13px;"><%= post.PostedByName %></strong><timestamp id="time" style="font-size: 13px;"><%= post.Timestamp %></timestamp></div>
+                
+                <div style="display: flex;justify-content: center;">
+                <% if(post.Title.length<=15){ %>
+                  <strong onclick="window.location.href='project/<%= post._id %>'" style="color:#045faa; font-size: 15px; cursor: pointer; z-index: 2; text-shadow: 1px 1px white;"><%= post.Title %></strong>
+                <% }else{ %>
+                  <strong onclick="window.location.href='project/<%= post._id %>'" style="color:#045faa; font-size: 15px; cursor: pointer; z-index: 2; text-shadow: 1px 1px white;"><%= post.Title %></strong>
+                <% } %>
+                </div>
+
+              
+                <% if(post.PostedBy == email){ %>
+                  <form class="delete-form" action="/deleteproject" method="post">
+                    
+                    <input type="hidden" name="postId" value="<%= post._id %>">
+                  
+                    <button id="deleteButton" class="delete-button" style="position: absolute; bottom: -75px; left: -90px; border: none; background-color: transparent; cursor: pointer; z-index: 20;" type="submit"><span class="material-symbols-outlined">
+                      delete
+                      </span></button>
+                  </form>
+                <% } %>
+              
+
+             
+
+
+
+              <% if(post.Description.length<=100){ %>
+                <p onclick="window.location.href='project/<%= post._id %>'" style="color:#045faa; cursor: pointer;"><%= post.Description.substring(0,100) %></p>
+              <% }else{ %>
+                <p onclick="window.location.href='project/<%= post._id %>'" style="color:#045faa; cursor: pointer;"><%= post.Description.substring(0,100) + " ..." %></p>
+              <% } %>
+                <div class="postCover" style="background:url('<%= post.sampleimage %>'); background-position: center; background-size: cover;position: absolute;"></div>
+            </nehal> -->
+
+
+
+            <div class="containernehal">
+              <div class="cardnehal" style="--clr: #009688">
+                  <div class="img-boxnehal">
+                      <img src="<%= post.sampleimage %>">
+                  </div>
+                  <div class="contentnehal">
+                      <h2 style="color: #21325E;"><%= post.Title %></h2>
+
+                      <% if(post.Description.length<=100){ %>
+                        <p style="color:#21325E; cursor: pointer;"><%= post.Description.substring(0,100) %></p>
+                      <% }else{ %>
+                        <p style="color:#21325E; cursor: pointer;"><%= post.Description.substring(0,100) + " ..." %></p>
+                      <% } %>
+
+                      <a href="project/<%= post._id %>" style="background-color: #21325E;">Show More</a>
+                      
+                      <% if(post.PostedBy == email){ %>
+                        <form class="delete-form" action="/deleteproject" method="post">
+                          
+                          <input type="hidden" name="postId" value="<%= post._id %>">
+                        
+                          <button id="deleteButton" class="delete-button" style="position: absolute; bottom: -75px; left: -90px; border: none; background-color: transparent; cursor: pointer; z-index: 20;" type="submit"><span class="material-symbols-outlined">
+                            delete
+                            </span></button>
+                        </form>
+                      <% } %>
+                      
+                  </div>
+                  
+              </div>
+
+              
+              <div style="display: flex; justify-content: space-around; width: 100%; position: absolute; bottom: 100px;"><strong style="font-size: 13px;"><%= post.PostedByName %></strong><timestamp id="time" style="font-size: 13px;"><%= post.Timestamp %></timestamp></div>
+          </div> <!-- Container Nehal Closes -->
+
+
+          
+
+      <% }); %>
+      
+    </div>
+    <div class="post-form-box"></div>
+
+
+
+
+      
+    <script src="/js/aitool.js"></script>
+    <script>
+
+
+      function myFunction() {
+          // Declare variables
+          var input, filter, ul, nehal, i, txtValue;
+          input = document.getElementById('myInput');
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myUL");
+          nehal = ul.getElementsByTagName('nehal');
+      
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < nehal.length; i++) {
+              a = nehal[i].getElementsByTagName("strong")[1];
+              txtValue = a.textContent || a.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  nehal[i].style.display = "";
+              } else {
+                  nehal[i].style.display = "none";
+              }
+          }
+      }
+
+      
+
+      function updateTimeAgo() {
+        // Select all elements with the 'timestamp' tag
+        const timestampElements = document.querySelectorAll('timestamp');
+
+        // Loop through each timestamp element
+        timestampElements.forEach(function(element) {
+            // Get the timestamp value from the element
+            const postTimestamp = element.textContent.trim(); // Assuming the timestamp is directly written in the element
+
+            // Calculate the time difference using moment.js
+            const timeAgo = moment(postTimestamp).fromNow();
+
+            // Update the element with the dynamic time ago text
+            element.textContent = timeAgo;
+        });
+
+        // Refresh time every minute
+        setTimeout(updateTimeAgo, 60000); // 60000 milliseconds = 1 minute
+    }
+
+    // Call the function to initialize
+    updateTimeAgo();
+      
+    // Get all elements with the class name 'like-btn'
+// Get all elements with the class name 'like-btn'
+let likeBtns = document.getElementsByClassName('like-btn');
+
+// Iterate over each element and add the event listener
+for (let i = 0; i < likeBtns.length; i++) {
+    likeBtns[i].addEventListener('click', function() {
+        // Toggle the color of the clicked like button
+        if (this.style.color === 'red') {
+            this.style.color = 'black'; // Revert to default color
+        } else {
+            document.getElementById('likeForm').submit();
+            this.style.color = 'red'; // Change color to red
+        }
+    });
+}
+
+
+      </script>
+      
+      <%- include('../theme/footer'); -%>

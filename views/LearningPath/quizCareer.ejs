@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/quiz.css">
+</head>
+<body>
+    <form action="/quizCareer" method="post" id="valueForm">
+
+    <div class="quiz-section1">
+        <div class="quiz-box">
+            <br><br><br>
+            <h1 style="font-size: 25px;">Confused about choosing the Right Career? Answer these small quiz to know.</h1>
+            <br><br>
+            <h1 style="color: #21325E; font-size: 50px;">Click Start to start the Quiz</h1>
+            <a class="next" style="left:50%; top:85%; position: absolute; transform: translate(-50%, -50%); background-color: #21325E;" onclick="ques2()">Start</a>
+        </div>
+        
+    </div>
+
+    <!-- ///////////////////// -->
+
+    <div class="quiz-section2">
+        <div class="quiz-box"><br><br><br><br><br><br><br>
+            What is your interest Domain?
+            <div class="containern">
+                <select style="height: 40px;" id="skill" name="interset">
+                    <option style="height: 50px;" value="I am Interested in Game Development">Game Development</option>
+                    <option style="height: 50px;" value="I am Interested in Artificial Intelligence (AI) and Machine Learning (ML)">Artificial Intelligence (AI) and Machine Learning (ML)</option>
+                    <option style="height: 50px;" value="I am Interested in User Experience (UX) Design">User Experience (UX) Design</option>
+                    <option style="height: 50px;" value="I am Interested in User Interface (UI) Design">User Interface (UI) Design</option>
+                    <option style="height: 50px;" value="I am Interested in DevOps">DevOps</option>
+                    <option style="height: 50px;" value="I am Interested in Cloud Computing">Cloud Computing</option>
+                    <option style="height: 50px;" value="I am Interested in Embedded Systems Development">Embedded Systems Development</option>
+                    <option style="height: 50px;" value="I am Interested in Web Design and Development">Web Design and Development</option>
+                    <option style="height: 50px;" value="I am Interested in Blockchain Development">Blockchain Development</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            
+            
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques1()">Previous</a>
+            <a class="next" onclick="ques3()">Next</a>
+        </div>
+    </div>
+
+
+    <!-- /////////////////////////////////////////// -->
+
+    <div class="quiz-section3">
+        <div class="quiz-box"><br><br><br><br><br><br><br>
+            Which programming language you're comfortable with?
+            <div class="containern">
+                <select style="height: 40px; width: 300px;" id="skill" name="language">
+                    <option style="height: 50px;" value="I am confortable with Java">Java</option>
+                    <option style="height: 50px;" value="I am confortable with Python">Python</option>
+                    <option style="height: 50px;" value="I am confortable with JavaScript">JavaScript</option>
+                    <option style="height: 50px;" value="I am confortable with Arduino (C++)">Arduino (C++)</option>
+                    <option style="height: 50px;" value="I am confortable with Assembly">Assembly</option>
+                    <option style="height: 50px;" value="I am confortable with C">C</option>
+                    <option style="height: 50px;" value="I am confortable with C#">C#</option>
+                    <option style="height: 50px;" value="I am confortable with C++">C++</option>
+                    <option style="height: 50px;" value="I am confortable with Go">Go</option>
+                    <option style="height: 50px;" value="I am confortable with HTML, CSS, JS">HTML, CSS, JS</option>
+                    <option style="height: 50px;" value="I am confortable with Kotlin">Kotlin</option>
+                    <option style="height: 50px;" value="I am confortable with Node.js">Node.js</option>
+                    <option style="height: 50px;" value="I am confortable with PHP">PHP</option>
+                    <option style="height: 50px;" value="I am confortable with R">R</option>
+                    <option style="height: 50px;" value="I am confortable with Swift">Swift</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            <!-- <button>sub</button> -->
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques2()">Previous</a>
+            <a class="next" onclick="ques4()">Next</a>
+        </div>
+    </div>
+
+    <div class="quiz-section4">
+        <div class="quiz-box"><br><br><br><br><br><br><br>
+            What specific skills or talents do you excel at? (e.g., Problem-solving, communication, attention to detail, analytical thinking)
+            <div class="containern">
+                <input type="radio" name="talent" value="I am pro at Problem Solving" id="volumeLow">
+                <label for="volumeLow">Problem Solving</label>
+                <br><br>
+                <input type="radio" name="talent" value="I am pro at Communication" id="volumeMod">
+                <label for="volumeMod">Communication</label>
+                <br><br>
+                <input type="radio" name="talent" value="I am pro at attention to detail" id="volumeMod1">
+                <label for="volumeMod1">Attention to details</label>
+                <br><br>
+                <input type="radio" name="talent" value="I am pro at analytical thinking" id="volumeMod2">
+                <label for="volumeMod2">Analytical Thinking</label>
+            </div>
+            <div class="containern" style="display: none;">
+                <select name="projectType" style="height: 40px; border: 2px solid #016236; background-color: white;">
+                    <option value="I want to learn API Development">API Development</option>
+                    <option value="I want to learn Android App Development">Android App Development</option>
+                    <option value="I want to learn AR and VR">Argumented Reality and Virtual Reality</option>
+                    <option value="I want to learn AI">Artificial Intelligence</option>
+                    <option value="I want to learn Automation">Automation</option>
+                    <option value="I want to learn Blockchain Development">Blockchain Development</option>
+                    <option value="I want to learn Cloud Computing">Cloud Computing</option>
+                    <option value="I want to learn Cybersecurity">Cybersecurity</option>
+                    <option value="I want to learn Data Analysis">Data Analysis</option>
+                    <option value="9">Data Science</option>
+                    <option value="10">Desktop Application Development</option>
+                    <option value="11">DevOps</option>
+                    <option value="12">E-commerce</option>
+                    <option value="13">Embedded Systems</option>
+                    <option value="14">Frontend Development</option>
+                    <option value="15">Full-stack Development</option>
+                    <option value="16">Game Development</option>
+                    <option value="17">Healthcare IT</option>
+                    <option value="18">Internet of Things</option>
+                    <option value="19">Mobile App Development</option>
+                    <option value="20">Scripting</option>
+                    <option value="21">Signal Processing</option>
+                    <option value="22">Statistics</option>
+                    <option value="23">System Administration</option>
+                    <option value="24">System Programming</option>
+                    <option value="25">Web Development</option>
+                </select>
+            </div>
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques3()">Previous</a>
+            <a class="next" onclick="ques5()">Next</a>
+        </div>
+    </div>
+
+    <div class="quiz-section5">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            Which aspect of software development sounds most appealing: front-end (visuals), back-end (server), or full-stack (both)?
+            <div class="containern">
+                <input type="radio" name="aspect" value="Frontend fits better for me" id="volumeLowN">
+                <label for="volumeLowN">Frontend</label>
+                <br><br>
+                <input type="radio" name="aspect" value="Backend Fits better for me" id="volumeModM">
+                <label for="volumeModM">Backend</label>
+                <br><br>
+                <input type="radio" name="aspect" value="I am ok with front-end as well as backend, Fullstack." id="volumeModK">
+                <label for="volumeModK">Fullstack</label>
+            </div>
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques4()">Previous</a>
+            <a class="next" onclick="ques6()">Next</a>
+        </div>
+    </div>
+
+    <div class="quiz-section6">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            How interested are you in staying up-to-date with current industry trends and adopting emerging technologies in your projects?
+            <div class="containern">
+                <input type="radio" name="uptodate" value="Love to stay up-to-date with current technologies" id="scalp1">
+                <label for="scalp1">Much</label>
+                <br><br>
+                <input type="radio" name="uptodate" value="sometimes love to stay up-to-date" id="scalp4">
+                <label for="scalp4">Rare</label>
+                <br><br>
+                <input type="radio" name="uptodate" value="Hate to stay up-to-date with current technologies" id="scalp3">
+                <label for="scalp3">Not at All</label>
+            </div>
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques5()">Previous</a>
+            <a class="next" onclick="ques7()">Next</a>
+        </div>
+    </div>
+
+    <!-- /////////////////////////00 -->
+    <div class="quiz-section7">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            Which emerging technology field excites you the most: AI, robotics, VR/AR etc?
+            <div class="containern">
+                
+                <input type="radio" name="excited" value="I am excited about Artificial Intelligence" id="loss2">
+                <label for="loss2">Artificial Intelligence</label>
+                <br><br>
+                <input type="radio" name="excited" value="I am excited about Machine Learning" id="loss1">
+                <label for="loss1">Machine Learning</label>
+                <br><br>
+                <input type="radio" name="excited" value="I am excited about AR and VR" id="loss3">
+                <label for="loss3">AR & VR</label>
+                <br><br>
+                <input type="radio" name="excited" value="I am excited about Robotics" id="loss4">
+                <label for="loss4">Robotics</label>
+            </div>
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques9()">Previous</a>
+            <button class="submit next" style="border: none;">SUB</button>
+        </div>
+    </div>
+    </form>
+    <script src="/js/quizLanguage.js"></script>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/ans.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js" integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <%- include('../theme/header'); -%>
+
+    <div class="language-box">
+        <img class="image" src="/images/languagesLogo/<%= resultLang %>.png" alt="logo">
+        <h1><%= resultLang %></h1>
+        <h5 style="margin-top: -10px;">Appeared: <%= appeared %> <br>
+        Type: <%= langType %>
+        </h5>
+    </div>
+
+    <div class="language-description">
+        <strong style="width: 100%;background-color: white;">Description:</strong>
+        <div class="typing-container">
+            <p id="typing-text"><%= description %></p>
+          </div>
+    </div>
+
+
+<!-- ================================================
+      Our Numeric data section
+===================================================-->
+<!-- langusers:langusers, langrank:langrank, langjobs:langjobs -->
+    <div class="numeric-data-box">
+      <div class="data">
+        <h1 class="count"><%= langusers %></h1>
+        <p>Total Users</p>
+      </div>
+
+      <div class="data">
+        <h1 class="count"><%= langrank %></h1>
+        <p>Rank</p>
+      </div>
+
+      <div class="data">
+        <h1 class="count"><%= langjobs %></h1>
+        <p>Jobs</p>
+      </div>
+    </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+  const text = '<%= description %>';
+//   alert(text)
+  const typingTextElement = document.getElementById('typing-text');
+
+  function typeText(index) {
+    if (index <= text.length) {
+      typingTextElement.innerHTML = text.slice(0, index);
+      setTimeout(function() {
+        typeText(index + 1);
+      }, 2); // Adjust the typing speed here (milliseconds)
+    }
+  }
+
+  // Start the typing animation
+  typeText(0);
+});
+    </script>
+
+    <script>$('.count').counterUp({
+      delay: 1,
+      time: 600
+  });</script>

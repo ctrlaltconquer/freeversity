@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/quiz.css">
+</head>
+<body>
+    <%- include('../theme/header'); -%>
+    <form action="/quizLanguage" method="post" id="valueForm">
+
+    <div class="quiz-section1">
+        <div class="quiz-box">
+            <br><br><br>
+            <strong style="font-size: 25px;">Confused about choosing the Language to learn? Answer these small quiz and know.</strong>
+            <br><br>
+            <h1 style="color: #016236; font-size: 50px;">Click Start to start the Quiz</h1>
+            <a class="next" style="left:50%; top:65%; position: absolute; transform: translate(-50%, -50%);" onclick="ques2()">Start</a>
+        </div>
+    </div>
+
+    <!-- ///////////////////// -->
+
+    <div class="quiz-section2">
+        <div class="quiz-box"><br><br><br><br><br><br><br>
+            What is your skill level?
+            <div class="containern">
+                <input type="radio" name="skill" value="0, 1, 0" class="male" id="beginnerskill">
+                <label for="beginnerskill">Beginner</label>
+                <br><br>
+                <input type="radio" name="skill" value="0, 0, 1" class="female" id="interskill">
+                <label for="interskill">Intermediate</label>
+                <br><br>
+                <input type="radio" name="skill" value="1, 0, 0" class="female" id="advskill">
+                <label for="advskill">Advanced</label>
+            </div>
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques1()">Previous</a>
+            <a class="next" onclick="ques3()">Next</a>
+        </div>
+    </div>
+
+
+    <!-- /////////////////////////////////////////// -->
+
+    <div class="quiz-section3">
+        <div class="quiz-box"><br><br><br><br><br><br><br>
+            What Learning style do you Prefer?
+            <div class="containern">
+                <input type="radio" name="approach" value="0, 1, 0" id="hairCurvy">
+                <label for="hairCurvy">Hands-on Coding</label>
+                <br><br>
+                <input type="radio" name="approach" value="0, 0, 1" id="hairStraight">
+                <label for="hairStraight">Visual Programming</label>
+                <br><br>
+                <input type="radio" name="approach" value="1, 0, 0" id="hairWavy">
+                <label for="hairWavy">Theoritical Approach</label>
+            </div>
+            <!-- <button>sub</button> -->
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques2()">Previous</a>
+            <a class="next" onclick="ques4()">Next</a>
+        </div>
+    </div>
+
+    <div class="quiz-section4">
+        <div class="quiz-box"><br><br><br><br><br><br><br>
+            What project-types are you looking for?
+            <div class="containern">
+                <select name="projectType" style="height: 40px; border: 2px solid #016236; background-color: white;">
+                    <option value="0">API Development</option>
+                    <option value="1">Android App Development</option>
+                    <option value="2">Argumented Reality and Virtual Reality</option>
+                    <option value="3">Artificial Intelligence</option>
+                    <option value="4">Automation</option>
+                    <option value="5">Blockchain Development</option>
+                    <option value="6">Cloud Computing</option>
+                    <option value="7">Cybersecurity</option>
+                    <option value="8">Data Analysis</option>
+                    <option value="9">Data Science</option>
+                    <option value="10">Desktop Application Development</option>
+                    <option value="11">DevOps</option>
+                    <option value="12">E-commerce</option>
+                    <option value="13">Embedded Systems</option>
+                    <option value="14">Frontend Development</option>
+                    <option value="15">Full-stack Development</option>
+                    <option value="16">Game Development</option>
+                    <option value="17">Healthcare IT</option>
+                    <option value="18">Internet of Things</option>
+                    <option value="19">Mobile App Development</option>
+                    <option value="20">Scripting</option>
+                    <option value="21">Signal Processing</option>
+                    <option value="22">Statistics</option>
+                    <option value="23">System Administration</option>
+                    <option value="24">System Programming</option>
+                    <option value="25">Web Development</option>
+                </select>
+            </div>
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques3()">Previous</a>
+            <a class="next" onclick="ques5()">Next</a>
+        </div>
+    </div>
+
+    <div class="quiz-section5">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            Are you interested in developing applications that run on multiple platforms (Windows, macOS, Linux, etc.)?
+            <div class="containern">
+                <input type="radio" name="platformCompatibility" value="0,1" id="volumeLow">
+                <label for="volumeLow">Yes</label>
+                <br><br>
+                <input type="radio" name="platformCompatibility" value="1,0" id="volumeMod">
+                <label for="volumeMod">No</label>
+            </div>
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques4()">Previous</a>
+            <a class="next" onclick="ques6()">Next</a>
+        </div>
+    </div>
+
+    <div class="quiz-section6">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            How interested are you in staying up-to-date with current industry trends and adopting emerging technologies in your projects?
+            <div class="containern">
+                <input type="radio" name="industry_trends" value="1, 0, 0" id="scalp1">
+                <label for="scalp1">Much</label>
+                <br><br>
+                <input type="radio" name="industry_trends" value="0, 0, 1" id="scalp4">
+                <label for="scalp4">Rare</label>
+                <br><br>
+                <input type="radio" name="industry_trends" value="0, 1, 0" id="scalp3">
+                <label for="scalp3">Not at All</label>
+            </div>
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques5()">Previous</a>
+            <a class="next" onclick="ques7()">Next</a>
+        </div>
+    </div>
+
+    <!-- /////////////////////////00 -->
+    <div class="quiz-section7">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            Do you prefer working with languages that have a rich ecosystem, offering a variety of tools, frameworks, and libraries?
+            <div class="containern">
+                
+                <input type="radio" name="ecosystems_and_tools" value="0, 0, 1" id="loss2">
+                <label for="loss2">Yes</label>
+                <br><br>
+                <input type="radio" name="ecosystems_and_tools" value="1, 0, 0" id="loss1">
+                <label for="loss1">No</label>
+                <br><br>
+                <input type="radio" name="ecosystems_and_tools" value="0, 1, 0" id="loss3">
+                <label for="loss3">Not sure</label>
+            </div>
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques6()">Previous</a>
+            <a class="next" onclick="ques8()">Next</a>
+        </div>
+    </div>
+
+    <!-- /////////////////////////////////////// -->
+
+    <div class="quiz-section8">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            Do you foresee yourself working on small-scale projects, large-scale enterprise applications, or a mix of both?
+            <div class="containern">
+                
+                <input type="radio" name="scalibility" value="0, 0, 1" id="medication1">
+                <label for="medication1">Small Scale</label>
+                <br><br>
+                <input type="radio" name="scalibility" value="1, 0, 0" id="medication2">
+                <label for="medication2">Large Scale</label>
+                <br><br>
+                <input type="radio" name="scalibility" value="0, 1, 0" id="medication3">
+                <label for="medication3">Mix of Both</label>
+            </div>
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques7()">Previous</a>
+            <a class="next" onclick="ques9()">Next</a>
+        </div>
+    </div>
+
+
+    <!-- ///////////////////////////// -->
+    <div class="quiz-section9">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            Are you interested in working with large datasets and performing data analysis or machine learning tasks?
+            <div class="containern">
+                
+                <input type="radio" name="datahandling" value="0, 0, 1" id="exposed2">
+                <label for="exposed2">Yes</label>
+                <br><br>
+                <input type="radio" name="datahandling" value="0, 1, 0" id="exposed1">
+                <label for="exposed1">Not Sure</label>
+                <br><br>
+                <input type="radio" name="datahandling" value="1, 0, 0" id="exposed3">
+                <label for="exposed3">No</label>
+            </div>
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques8()">Previous</a>
+            <a class="next" onclick="ques10()">Next</a>
+        </div>
+    </div>
+
+
+    <div class="quiz-section10">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            How important is well-documented language and library documentation in your decision-making process?
+        <div class="containern">
+            <input type="radio" name="documentation" value="0, 0, 1" id="documentation1">
+            <label for="documentation1">Yes</label>
+            <br><br>
+            <input type="radio" name="documentation" value="0, 1, 0" id="documentation2">
+            <label for="documentation2">Not Sure</label>
+            <br><br>
+            <input type="radio" name="documentation" value="1, 0, 0" id="documentation3">
+            <label for="documentation3">No</label>
+        </div>
+            
+        </div>
+        <div class="footerQuiz">
+            <a class="next" onclick="ques9()">Previous</a>
+            <button class="submit next" style="border: none;">SUB</button>
+        </div>
+    </div>
+    </form>
+
+    <div class="alert">Only 2 selection allowed
+        <button class="btn" style="height: 20px;width: 20px; position: absolute; top:-10px; right: -10px; border:none; background-color: red; cursor: pointer; border-radius: 1000px; color: white;" onclick="hideAlert()">x</button>
+    </div>
+    <script src="/js/quizLanguage.js"></script>
+    <%- include('../theme/footer'); -%>
