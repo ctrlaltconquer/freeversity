@@ -1123,6 +1123,11 @@ app.get('/miniprojects', isAuthenticated,async function(req, res){
 
     // FILTER FOR MY POST
 app.get('/myprojects', async function(req, res) {
+
+    const { MongoClient } = require("mongodb");
+    const uri = process.env.MONGO_URI;
+    const client = new MongoClient(uri);
+
     try {
         // Ensure that the user is authenticated and the session is maintained
         const { name, mail, imageName, userName } = req.session.user;
@@ -1160,6 +1165,7 @@ app.get('/myprojects', async function(req, res) {
             await client.connect();
             
             const postId = req.body.postId; // Assuming postId is sent from the client as part of the request body
+            console.log(postId)
             const database = client.db("Freeversity");
             const collection = database.collection("projects");
             
@@ -1271,6 +1277,7 @@ app.post("/miniprojects", Multer.any(),async function(req, res){
                             project = {
                                 "PostedBy": mail,
                                 "PostedByName": name,
+                                "PostedByUsername": userName,
                                 "Title": projectData.projectname,
                                 "Description": projectData.projectdescription,
                                 "GithubRepoLink": projectData.githubrepolink,
