@@ -366,7 +366,7 @@ app.get("/languageAns/:userID", isAuthenticated, function(req, res){
     const appeared = req.session.appeared;
     // Retrieve other relevant data from session
 
-    res.render("LearningPath/languageAns", { name: name, mail: mail, imageName: updatedImageName, resultLang: resultLang, appeared: appeared, description: description, langusers: langusers, langrank: langrank, langjobs: langjobs, langType: langType });
+    res.render("LearningPath/languageAns", { name: name, mail: mail, imageName: updatedImageName, resultLang: resultLang, appeared: appeared, description: description, langusers: langusers, langrank: langrank, langjobs: langjobs, langType: langType, user:userName });
 });
 
 
