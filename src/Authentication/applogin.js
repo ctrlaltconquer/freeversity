@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 let passwordUpdated = ""
 async function loginUser(data, req, res) {
-    // Replace the following with your Atlas connection string
+    // Replace the folloing with your Atlas connection string
     const url = process.env.MONGO_URI;
     const client = new MongoClient(url);
     
