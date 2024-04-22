@@ -1446,6 +1446,9 @@ app.get("/profile/:user", function(req,res){
 });
 
 
+app.get("/toonbox.css", (req, res) => {
+    res.sendFile(__dirname + "/CDN/toonbox.css")
+})
 
 // Running app on server 3000
 app.listen(3000, function(){
