@@ -1450,6 +1450,53 @@ app.get("/toonbox.css", (req, res) => {
     res.sendFile(__dirname + "/CDN/toonbox.css")
 })
 
+app.get('/feedback', (req, res)=>{
+    res.render("feedback", {imageName:null, name:null, mail:null});
+})
+
+app.post('/feedback', (req, res) => {
+    const data = req.body;
+    
+    const { MongoClient } = require("mongodb");
+
+    // Replace the following with your Atlas connection string
+    const url = process.env.MONGO_URI;
+    const client = new MongoClient(url);
+
+    // Reference the database to use
+    const dbName = "Freeversity";
+
+    async function run() {
+        try {
+            // Connect to the Atlas cluster
+            await client.connect();
+            const db = client.db(dbName);
+
+            // Reference the "signup" collection in the specified database
+            const col = db.collection("feedback");
+
+            const feedback = {
+                "Name": data.name,
+                "College Name": data.collage_name,
+                "Feedback": data.feedback,
+                "Timestamp": new Date()
+            };
+
+            // Insert the document into the specified collection
+            const result = await col.insertOne(feedback);
+            posts.push(post);
+            res.send("Feedback Submitted");
+
+        } catch (err) {
+            console.log(err.stack);
+        } finally {
+            await client.close();
+        }
+    }
+
+    run().catch(console.dir);
+})
+
 // Running app on server 3000
 app.listen(3000, function(){
     console.log("Server started running on port 3000");

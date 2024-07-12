@@ -115,10 +115,16 @@ html,body{
     color: #21325E;
     margin-top: 0;
     /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
     transition: 0.5s;
-    height: 80%;
+    height: auto;
     width:100%;
     animation: content 1s ease-out forwards;
+    padding: 50px;
 }
 .content h1{
     font-size: 80px;
@@ -142,17 +148,6 @@ html,body{
     margin-top: -20px;
     color:rgb(96, 94, 94);
 }
-
-
-.tagline{
-    height:auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 5%;
-}
-
-
 
 button{
     height:50px;
@@ -373,7 +368,7 @@ i{
 .un-goals{
     background-color: #21325E;
     width: 100%;
-    min-height:100%;
+    min-height:50%;
     color: white;
     font-family: "Bitter",sans-serif;
     padding: 10% 5%;
